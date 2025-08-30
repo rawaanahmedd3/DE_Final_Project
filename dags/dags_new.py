@@ -52,7 +52,7 @@ default_args = {
 with DAG(
     dag_id="postgres_to_gcs_dag",
     default_args=default_args,
-    start_date=datetime(2025, 8, 22),
+    start_date=datetime(2025, 8, 24),
     schedule_interval="0 12 * * *",   # every day at 12 PM
     catchup=False,
 ) as dag:
