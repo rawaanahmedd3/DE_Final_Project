@@ -6,8 +6,6 @@ import pandas as pd
 from google.cloud import storage
 import os
 
-# Google credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Rawan\Downloads\ready-de26-4a47484ab294.json"
 
 # Function to extract & upload
 def extract_and_upload():
@@ -52,7 +50,7 @@ default_args = {
 with DAG(
     dag_id="postgres_to_gcs_dag",
     default_args=default_args,
-    start_date=datetime(2025, 8, 24),
+    start_date=datetime(2025, 8, 22),
     schedule_interval="0 12 * * *",   # every day at 12 PM
     catchup=False,
 ) as dag:
